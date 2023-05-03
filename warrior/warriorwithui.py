@@ -14,7 +14,7 @@ def main():
     cap = cv2.VideoCapture(0)
 
     # PNG dosyasını yükle
-    img = cv2.imread('kenan.png', cv2.IMREAD_UNCHANGED)
+    img = cv2.imread('path/to/your/image.png', cv2.IMREAD_UNCHANGED)
     if img is None:
         print("no such file or directory")
         return
