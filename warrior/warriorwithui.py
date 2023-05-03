@@ -13,7 +13,7 @@ If you want to see the annoying grids you can delete line 89-97 :D
 def main():
     cap = cv2.VideoCapture(0)
 
-    # PNG dosyasını yükle
+    # PNG file
     img = cv2.imread('path/to/your/image.png', cv2.IMREAD_UNCHANGED)
     if img is None:
         print("no such file or directory")
@@ -85,7 +85,7 @@ def process_frame(frame, img):
         x_idx = (cx - 1) // rect_size
         y_idx = (cy - 1) // rect_size
 
-        #This part draws lines to make screen grid by grid
+        # This part draws lines to make screen grid by grid
         """
         for i in range(10):
             for j in range(10):
@@ -95,7 +95,7 @@ def process_frame(frame, img):
                 y2 = (j + 1) * rect_size
                 cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 0, 255), 1)
         """
-        # Piksel lokasyonlarını ve kare numaralarını yazdır
+        # Prints which square the midpoint is in
         text = f"X: {cx}, Y: {cy}, Rectangle_Location: ({y_idx+1}, {x_idx+1})"
         cv2.putText(frame, text, (10, height - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
 
